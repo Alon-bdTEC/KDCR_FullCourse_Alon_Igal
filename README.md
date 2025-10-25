@@ -1,9 +1,11 @@
 🤖 Advanced Robot Kinematics, Dynamics & Nonlinear Control
 
 Parallel Robot:
+
 ![Parallel Robot](ParralelRobot.JPG)
 
 Serial Robot:
+
 ![Serial Robot](SerialRobot.JPG)
 
 ------------------------------------------------------------
