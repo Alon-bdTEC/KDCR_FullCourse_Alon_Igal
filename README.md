@@ -52,7 +52,7 @@ and controlling robotic manipulators.
 
 2. Dynamics  
    - Lagrange and Newton–Euler formulations  
-   - Computation of M(q), C(q, q_dot), G(q) matrices  
+   - Computation of H(q), C(q, q_dot), G(q) matrices  
 
 3. Control Design  
    - Inverse Dynamics (ID): Cancels nonlinearities and linearizes behavior.  
@@ -69,24 +69,22 @@ and controlling robotic manipulators.
 ------------------------------------------------------------
 The system is modeled as:
 
-M(q) * q_ddot + C(q, q_dot) * q_dot + G(q) = tau
+![SystemModel](SystemModel.JPG)
 
 where:
 q – generalized coordinates (joint angles)
-M(q) – inertia matrix
+H(q) – inertia matrix
 C(q, q_dot) – Coriolis/centrifugal terms
 G(q) – gravity vector
-tau – control torque input
+tau – control torque/forces inputs
 
-The nonlinear MIMO control law is of the form:
+For example, the more basic Inverse Dynamics + PD control law:
 
-tau = M(q) * nu + C(q, q_dot) * q_dot + G(q)
+![ControlLaw1](ControlLaw1.JPG)
 
-with:
+and the Min-Max control law:
 
-nu = q_ddot_d + Kv * (q_dot_d - q_dot) + Kp * (q_d - q)
-
-and extensions including Min-Max and ID-based optimization.
+![ControlLawMinMax](ControlLawMinMax.JPG)
 
 ------------------------------------------------------------
 🎮 Demonstrations
